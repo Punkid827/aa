@@ -1,0 +1,2227 @@
+Model: ```html
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI와 디지털비즈니스 | 랜딩 페이지</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <style>
+        :root {
+            --navy-900: #0d1b2a;
+            --navy-800: #1b2d45;
+            --navy-700: #243b53;
+            --navy-600: #334e68;
+            --navy-500: #486581;
+            --navy-400: #627d98;
+            --navy-300: #829ab1;
+            --beige-100: #fdf8f0;
+            --beige-200: #f9f0e3;
+            --beige-300: #f0e4d0;
+            --beige-400: #e6d5b8;
+            --beige-500: #d4b896;
+            --warm-gold: #b8860b;
+            --warm-gold-light: #daa520;
+            --accent-rust: #c45d3e;
+            --accent-teal: #2d6a6f;
+            --text-dark: #1a1a2e;
+            --text-body: #3d3d5c;
+            --text-light: #6b6b8a;
+            --white: #ffffff;
+            --shadow-sm: 0 2px 8px rgba(13, 27, 42, 0.08);
+            --shadow-md: 0 8px 30px rgba(13, 27, 42, 0.12);
+            --shadow-lg: 0 20px 60px rgba(13, 27, 42, 0.15);
+            --shadow-xl: 0 30px 80px rgba(13, 27, 42, 0.2);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --radius-xl: 30px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background: var(--beige-100);
+            color: var(--text-body);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--beige-200);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--navy-600);
+            border-radius: 4px;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 2rem;
+            transition: var(--transition);
+        }
+
+        .header.scrolled {
+            background: rgba(253, 248, 240, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: var(--shadow-sm);
+            padding: 0.75rem 2rem;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-brand {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header-title {
+            font-family: 'Noto Serif KR', serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--navy-800);
+            letter-spacing: -0.5px;
+        }
+
+        .header-author {
+            font-size: 0.75rem;
+            color: var(--navy-400);
+            font-weight: 400;
+        }
+
+        .header-nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            list-style: none;
+        }
+
+        .header-nav a {
+            color: var(--navy-600);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .header-nav a:hover {
+            color: var(--navy-800);
+        }
+
+        .header-cta {
+            padding: 8px 20px;
+            background: var(--navy-800);
+            color: var(--white) !important;
+            border-radius: 50px;
+            font-size: 0.85rem !important;
+            transition: var(--transition);
+        }
+
+        .header-cta:hover {
+            background: var(--navy-700) !important;
+            color: var(--white) !important;
+            transform: translateY(-1px);
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--navy-800);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-bg-pattern {
+            position: absolute;
+            inset: 0;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230d1b2a' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .hero-decoration {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(184, 134, 11, 0.06), transparent 70%);
+            top: -100px;
+            right: -100px;
+        }
+
+        .hero-decoration-2 {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(13, 27, 42, 0.04), transparent 70%);
+            bottom: -50px;
+            left: -50px;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content {
+            max-width: 550px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--beige-200);
+            border: 1px solid var(--beige-400);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            color: var(--navy-600);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .hero-badge i {
+            color: var(--warm-gold);
+        }
+
+        .hero-headline {
+            font-family: 'Noto Serif KR', serif;
+            font-size: clamp(2.2rem, 4vw, 3.2rem);
+            font-weight: 900;
+            color: var(--navy-900);
+            line-height: 1.3;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+
+        .hero-headline .accent {
+            color: var(--warm-gold);
+            position: relative;
+        }
+
+        .hero-headline .accent::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: rgba(184, 134, 11, 0.15);
+            border-radius: 4px;
+            z-index: -1;
+        }
+
+        .hero-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            line-height: 1.9;
+        }
+
+        .hero-meta {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            color: var(--navy-500);
+        }
+
+        .hero-meta-item i {
+            color: var(--warm-gold);
+            font-size: 0.9rem;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            border: none;
+            font-family: inherit;
+        }
+
+        .btn-primary {
+            background: var(--navy-800);
+            color: var(--white);
+            box-shadow: 0 8px 25px rgba(13, 27, 42, 0.25);
+        }
+
+        .btn-primary:hover {
+            background: var(--navy-700);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(13, 27, 42, 0.3);
+        }
+
+        .btn-secondary {
+            background: var(--white);
+            color: var(--navy-800);
+            border: 1.5px solid var(--beige-400);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--navy-600);
+            background: var(--beige-200);
+        }
+
+        .btn-chatbot {
+            background: linear-gradient(135deg, var(--warm-gold), var(--warm-gold-light));
+            color: var(--white);
+            box-shadow: 0 8px 25px rgba(184, 134, 11, 0.3);
+            animation: subtle-glow 3s ease-in-out infinite;
+        }
+
+        .btn-chatbot:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(184, 134, 11, 0.4);
+        }
+
+        @keyframes subtle-glow {
+            0%, 100% { box-shadow: 0 8px 25px rgba(184, 134, 11, 0.3); }
+            50% { box-shadow: 0 8px 35px rgba(184, 134, 11, 0.45); }
+        }
+
+        /* Book Cover */
+        .hero-book {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .book-wrapper {
+            position: relative;
+            perspective: 1200px;
+        }
+
+        .book-cover {
+            width: 320px;
+            height: 440px;
+            background: linear-gradient(160deg, var(--navy-800), var(--navy-900));
+            border-radius: 4px 16px 16px 4px;
+            box-shadow: var(--shadow-xl),
+                        -5px 0 15px rgba(0,0,0,0.1);
+            position: relative;
+            transform: rotateY(-8deg) rotateX(2deg);
+            transition: transform 0.5s ease;
+            overflow: hidden;
+        }
+
+        .book-cover:hover {
+            transform: rotateY(-3deg) rotateX(1deg);
+        }
+
+        .book-spine {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 8px;
+            background: linear-gradient(180deg, var(--warm-gold), var(--warm-gold-light));
+            border-radius: 4px 0 0 4px;
+        }
+
+        .book-inner {
+            padding: 3rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .book-cover::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(circle at 30% 20%, rgba(184, 134, 11, 0.1), transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(45, 106, 111, 0.08), transparent 50%);
+            z-index: 0;
+        }
+
+        .book-cover::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.02));
+        }
+
+        .book-ai-icon {
+            font-size: 2.5rem;
+            color: var(--warm-gold-light);
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        .book-title-text {
+            font-family: 'Noto Serif KR', serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1.4;
+            margin-bottom: 0.5rem;
+        }
+
+        .book-subtitle-text {
+            font-size: 0.85rem;
+            color: var(--navy-300);
+            line-height: 1.6;
+        }
+
+        .book-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 1.5rem;
+        }
+
+        .book-author-text {
+            font-size: 0.9rem;
+            color: var(--beige-400);
+            font-weight: 500;
+        }
+
+        .book-publisher-text {
+            font-size: 0.75rem;
+            color: var(--navy-400);
+            margin-top: 4px;
+        }
+
+        .book-floating-elements {
+            position: absolute;
+            inset: -40px;
+            pointer-events: none;
+        }
+
+        .floating-dot {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            opacity: 0.4;
+            animation: float-dot 4s ease-in-out infinite;
+        }
+
+        .floating-dot:nth-child(1) {
+            background: var(--warm-gold);
+            top: 10%;
+            right: 5%;
+            animation-delay: 0s;
+        }
+        .floating-dot:nth-child(2) {
+            background: var(--accent-teal);
+            bottom: 20%;
+            left: 5%;
+            animation-delay: 1s;
+        }
+        .floating-dot:nth-child(3) {
+            background: var(--warm-gold-light);
+            top: 50%;
+            right: -5%;
+            width: 6px;
+            height: 6px;
+            animation-delay: 2s;
+        }
+
+        @keyframes float-dot {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+        }
+
+        /* Summary Section */
+        .summary {
+            padding: 5rem 2rem;
+            background: var(--white);
+            border-top: 1px solid var(--beige-300);
+            border-bottom: 1px solid var(--beige-300);
+        }
+
+        .summary-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .summary-quote {
+            font-family: 'Noto Serif KR', serif;
+            font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+            color: var(--navy-800);
+            line-height: 1.8;
+            position: relative;
+            padding: 0 2rem;
+        }
+
+        .summary-quote::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 0;
+            font-size: 4rem;
+            color: var(--warm-gold);
+            opacity: 0.3;
+            font-family: Georgia, serif;
+        }
+
+        .summary-author-line {
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Chapters Section */
+        .chapters {
+            padding: 6rem 2rem;
+            background: var(--beige-100);
+        }
+
+        .chapters-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--warm-gold);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-title {
+            font-family: 'Noto Serif KR', serif;
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            font-weight: 700;
+            color: var(--navy-900);
+            margin-bottom: 1rem;
+        }
+
+        .section-desc {
+            font-size: 1rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .chapters-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0;
+        }
+
+        .chapter-item {
+            display: grid;
+            grid-template-columns: 60px 1fr auto;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--beige-300);
+            transition: var(--transition);
+            cursor: default;
+            border-radius: var(--radius-sm);
+        }
+
+        .chapter-item:first-child {
+            border-top: 1px solid var(--beige-300);
+        }
+
+        .chapter-item:hover {
+            background: var(--white);
+            box-shadow: var(--shadow-sm);
+            transform: translateX(4px);
+        }
+
+        .chapter-number {
+            font-family: 'Noto Serif KR', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--warm-gold);
+            opacity: 0.7;
+        }
+
+        .chapter-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .chapter-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--navy-800);
+        }
+
+        .chapter-desc {
+            font-size: 0.82rem;
+            color: var(--text-light);
+        }
+
+        .chapter-part {
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--navy-400);
+            background: var(--beige-200);
+            padding: 4px 10px;
+            border-radius: 50px;
+            white-space: nowrap;
+        }
+
+        /* Part Divider */
+        .part-divider {
+            padding: 1.5rem;
+            text-align: center;
+            margin: 1rem 0;
+        }
+
+        .part-divider-title {
+            font-family: 'Noto Serif KR', serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--navy-700);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .part-divider-title::before,
+        .part-divider-title::after {
+            content: '';
+            height: 1px;
+            width: 40px;
+            background: var(--beige-400);
+        }
+
+        /* Chatbot Section */
+        .chatbot-section {
+            padding: 5rem 2rem;
+            background: linear-gradient(160deg, var(--navy-900), var(--navy-800));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .chatbot-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(184, 134, 11, 0.08), transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(45, 106, 111, 0.06), transparent 50%);
+        }
+
+        .chatbot-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .chatbot-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 2rem;
+            background: linear-gradient(135deg, var(--warm-gold), var(--warm-gold-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--white);
+            box-shadow: 0 10px 40px rgba(184, 134, 11, 0.3);
+            animation: chatbot-pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes chatbot-pulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 10px 40px rgba(184, 134, 11, 0.3); }
+            50% { transform: scale(1.05); box-shadow: 0 15px 50px rgba(184, 134, 11, 0.4); }
+        }
+
+        .chatbot-title {
+            font-family: 'Noto Serif KR', serif;
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .chatbot-desc {
+            font-size: 1.05rem;
+            color: var(--navy-300);
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+        }
+
+        .chatbot-features {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .chatbot-feature {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--beige-400);
+            font-size: 0.85rem;
+        }
+
+        .chatbot-feature i {
+            color: var(--warm-gold-light);
+        }
+
+        .chatbot-btn {
+            padding: 18px 40px;
+            background: linear-gradient(135deg, var(--warm-gold), var(--warm-gold-light));
+            color: var(--white);
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-family: inherit;
+            text-decoration: none;
+            box-shadow: 0 10px 35px rgba(184, 134, 11, 0.35);
+        }
+
+        .chatbot-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 45px rgba(184, 134, 11, 0.45);
+        }
+
+        .chatbot-btn i {
+            font-size: 1.2rem;
+        }
+
+        .chatbot-note {
+            margin-top: 1.5rem;
+            font-size: 0.8rem;
+            color: var(--navy-400);
+        }
+
+        /* Author Section */
+        .author-section {
+            padding: 5rem 2rem;
+            background: var(--white);
+            border-top: 1px solid var(--beige-300);
+        }
+
+        .author-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .author-avatar {
+            flex-shrink: 0;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--beige-300), var(--beige-400));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--navy-600);
+        }
+
+        .author-info h3 {
+            font-family: 'Noto Serif KR', serif;
+            font-size: 1.4rem;
+            color: var(--navy-800);
+            margin-bottom: 0.5rem;
+        }
+
+        .author-info .author-title {
+            font-size: 0.9rem;
+            color: var(--warm-gold);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .author-info p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--navy-900);
+            padding: 4rem 2rem 2rem;
+            color: var(--navy-300);
+        }
+
+        .footer-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .footer-main {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .footer-brand h3 {
+            font-family: 'Noto Serif KR', serif;
+            font-size: 1.2rem;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p {
+            font-size: 0.85rem;
+            line-height: 1.8;
+            color: var(--navy-400);
+        }
+
+        .footer-col h4 {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--beige-400);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .footer-col a {
+            color: var(--navy-400);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: var(--transition);
+        }
+
+        .footer-col a:hover {
+            color: var(--beige-400);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-copyright {
+            font-size: 0.8rem;
+            color: var(--navy-500);
+        }
+
+        .footer-publisher {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 0.8rem;
+            color: var(--navy-500);
+        }
+
+        .footer-publisher-logo {
+            width: 36px;
+            height: 36px;
+            background: var(--navy-800);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--warm-gold);
+            font-size: 1rem;
+        }
+
+        /* Floating Chatbot Button */
+        .floating-chatbot {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 999;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--warm-gold), var(--warm-gold-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.4rem;
+            cursor: pointer;
+            box-shadow: 0 8px 30px rgba(184, 134, 11, 0.4);
+            transition: var(--transition);
+            border: none;
+            animation: float-btn 3s ease-in-out infinite;
+        }
+
+        .floating-chatbot:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 40px rgba(184, 134, 11, 0.5);
+        }
+
+        .floating-chatbot .tooltip {
+            position: absolute;
+            right: calc(100% + 12px);
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--navy-900);
+            color: var(--white);
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: var(--transition);
+        }
+
+        .floating-chatbot:hover .tooltip {
+            opacity: 1;
+        }
+
+        @keyframes float-btn {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .floating-chatbot:hover {
+            animation: none;
+            transform: scale(1.1);
+        }
+
+        /* Chatbot Modal */
+        .chatbot-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 10000;
+            background: rgba(13, 27, 42, 0.6);
+            backdrop-filter: blur(5px);
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .chatbot-modal.active {
+            display: flex;
+        }
+
+        .chatbot-modal-content {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            width: 100%;
+            max-width: 500px;
+            max-height: 600px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+            animation: modal-in 0.3s ease;
+        }
+
+        @keyframes modal-in {
+            from { opacity: 0; transform: translateY(20px) scale(0.95); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        .chatbot-modal-header {
+            padding: 1.5rem;
+            background: var(--navy-800);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .chatbot-modal-header h3 {
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .chatbot-modal-header h3 i {
+            color: var(--warm-gold-light);
+        }
+
+        .chatbot-close {
+            background: none;
+            border: none;
+            color: var(--navy-300);
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: var(--transition);
+            padding: 4px;
+        }
+
+        .chatbot-close:hover {
+            color: var(--white);
+        }
+
+        .chatbot-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            background: var(--beige-100);
+        }
+
+        .chat-message {
+            display: flex;
+            gap: 10px;
+            max-width: 85%;
+        }
+
+        .chat-message.bot {
+            align-self: flex-start;
+        }
+
+        .chat-message.user {
+            align-self: flex-end;
+            flex-direction: row-reverse;
+        }
+
+        .chat-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            flex-shrink: 0;
+        }
+
+        .chat-message.bot .chat-avatar {
+            background: var(--warm-gold);
+            color: var(--white);
+        }
+
+        .chat-message.user .chat-avatar {
+            background: var(--navy-600);
+            color: var(--white);
+        }
+
+        .chat-bubble {
+            padding: 10px 14px;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .chat-message.bot .chat-bubble {
+            background: var(--white);
+            color: var(--text-body);
+            border: 1px solid var(--beige-300);
+            border-top-left-radius: 4px;
+        }
+
+        .chat-message.user .chat-bubble {
+            background: var(--navy-800);
+            color: var(--white);
+            border-top-right-radius: 4px;
+        }
+
+        .chatbot-input-area {
+            padding: 1rem 1.5rem;
+            border-top: 1px solid var(--beige-300);
+            display: flex;
+            gap: 10px;
+            background: var(--white);
+        }
+
+        .chatbot-input-area input {
+            flex: 1;
+            padding: 10px 16px;
+            border: 1px solid var(--beige-400);
+            border-radius: 50px;
+            font-size: 0.9rem;
+            outline: none;
+            font-family: inherit;
+            transition: var(--transition);
+        }
+
+        .chatbot-input-area input:focus {
+            border-color: var(--navy-600);
+        }
+
+        .chatbot-input-area button {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--navy-800);
+            color: var(--white);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .chatbot-input-area button:hover {
+            background: var(--navy-700);
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 3rem;
+            }
+
+            .hero-content {
+                max-width: 100%;
+                order: 2;
+            }
+
+            .hero-book {
+                order: 1;
+            }
+
+            .hero-meta {
+                justify-content: center;
+            }
+
+            .hero-actions {
+                justify-content: center;
+            }
+
+            .book-cover {
+                width: 260px;
+                height: 360px;
+            }
+
+            .author-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-main {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-nav {
+                display: none;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .chapter-item {
+                grid-template-columns: 40px 1fr;
+                gap: 1rem;
+            }
+
+            .chapter-part {
+                display: none;
+            }
+
+            .chatbot-features {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero {
+                padding: 6rem 1.5rem 3rem;
+                min-height: auto;
+            }
+
+            .book-cover {
+                width: 220px;
+                height: 300px;
+            }
+
+            .book-inner {
+                padding: 2rem 1.5rem;
+            }
+
+            .book-title-text {
+                font-size: 1.3rem;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(253, 248, 240, 0.98);
+            z-index: 9999;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .mobile-menu.active {
+            display: flex;
+        }
+
+        .mobile-menu a {
+            font-family: 'Noto Serif KR', serif;
+            font-size: 1.3rem;
+            color: var(--navy-800);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--navy-800);
+            cursor: pointer;
+        }
+
+        /* Language Toggle */
+        .lang-toggle {
+            display: flex;
+            align-items: center;
+            background: var(--beige-200);
+            border-radius: 50px;
+            padding: 3px;
+            border: 1px solid var(--beige-400);
+        }
+
+        .lang-btn {
+            padding: 5px 12px;
+            border-radius: 50px;
+            border: none;
+            background: transparent;
+            color: var(--text-light);
+            font-size: 0.75rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: inherit;
+        }
+
+        .lang-btn.active {
+            background: var(--navy-800);
+            color: var(--white);
+        }
+
+        /* Language visibility */
+        [data-lang="en"] {
+            display: none;
+        }
+
+        body.en [data-lang="ko"] {
+            display: none;
+        }
+
+        body.en [data-lang="en"] {
+            display: block;
+        }
+
+        span[data-lang="en"],
+        span[data-lang="ko"] {
+            display: inline;
+        }
+
+        body.en span[data-lang="ko"] {
+            display: none;
+        }
+
+        body.en span[data-lang="en"] {
+            display: inline;
+        }
+
+        /* Fix flex items */
+        .hero-actions [data-lang],
+        .chatbot-features [data-lang],
+        .hero-meta [data-lang] {
+            display: flex;
+        }
+
+        body.en .hero-actions [data-lang="ko"],
+        body.en .chatbot-features [data-lang="ko"],
+        body.en .hero-meta [data-lang="ko"] {
+            display: none;
+        }
+
+        .chapter-item[data-lang="en"],
+        .part-divider[data-lang="en"] {
+            display: none;
+        }
+
+        body.en .chapter-item[data-lang="ko"],
+        body.en .part-divider[data-lang="ko"] {
+            display: none;
+        }
+
+        body.en .chapter-item[data-lang="en"],
+        body.en .part-divider[data-lang="en"] {
+            display: grid;
+        }
+
+        body.en .part-divider[data-lang="en"] {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header-container">
+            <div class="header-brand">
+                <span class="header-title">
+                    <span data-lang="ko">AI와 디지털비즈니스</span>
+                    <span data-lang="en">AI & Digital Business</span>
+                </span>
+                <span class="header-author">
+                    <span data-lang="ko">김지능 · 박디지털 공저</span>
+                    <span data-lang="en">by J. Kim & D. Park</span>
+                </span>
+            </div>
+            <nav>
+                <ul class="header-nav">
+                    <li><a href="#hero">
+                        <span data-lang="ko">소개</span>
+                        <span data-lang="en">Intro</span>
+                    </a></li>
+                    <li><a href="#chapters">
+                        <span data-lang="ko">목차</span>
+                        <span data-lang="en">Chapters</span>
+                    </a></li>
+                    <li><a href="#chatbot-section">
+                        <span data-lang="ko">AI 질문</span>
+                        <span data-lang="en">Ask AI</span>
+                    </a></li>
+                    <li>
+                        <div class="lang-toggle">
+                            <button class="lang-btn active" data-language="ko">한</button>
+                            <button class="lang-btn" data-language="en">EN</button>
+                        </div>
+                    </li>
+                    <li><a href="#chatbot-section" class="header-cta">
+                        <span data-lang="ko">책에게 물어보기</span>
+                        <span data-lang="en">Ask the Book</span>
+                    </a></li>
+                </ul>
+            </nav>
+            <button class="mobile-toggle" id="mobileToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" id="mobileClose">
+            <i class="fas fa-times"></i>
+        </button>
+        <a href="#hero" class="mobile-link">
+            <span data-lang="ko">소개</span>
+            <span data-lang="en">Intro</span>
+        </a>
+        <a href="#chapters" class="mobile-link">
+            <span data-lang="ko">목차</span>
+            <span data-lang="en">Chapters</span>
+        </a>
+        <a href="#chatbot-section" class="mobile-link">
+            <span data-lang="ko">AI 질문</span>
+            <span data-lang="en">Ask AI</span>
+        </a>
+        <div class="lang-toggle" style="margin-top: 1rem;">
+            <button class="lang-btn active" data-language="ko">한</button>
+            <button class="lang-btn" data-language="en">EN</button>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg-pattern"></div>
+        <div class="hero-decoration"></div>
+        <div class="hero-decoration-2"></div>
+        <div class="hero-container">
+            <div class="hero-content" data-aos="fade-right" data-aos-duration="1000">
+                <div class="hero-badge">
+                    <i class="fas fa-star"></i>
+                    <span data-lang="ko">2024 신간 출간</span>
+                    <span data-lang="en">New Release 2024</span>
+                </div>
+                <h1 class="hero-headline">
+                    <span data-lang="ko"><span class="accent">AI</span>가 바꾸는<br>디지털 비즈니스의<br>새로운 패러다임</span>
+                    <span data-lang="en">The New Paradigm of<br>Digital Business<br>Transformed by <span class="accent">AI</span></span>
+                </h1>
+                <p class="hero-subtitle">
+                    <span data-lang="ko">인공지능 기술이 산업 전반을 어떻게 혁신하는지, 기업이 디지털 전환을 통해 어떻게 경쟁 우위를 확보할 수 있는지 체계적으로 분석합니다.</span>
+                    <span data-lang="en">A systematic analysis of how AI technology innovates across industries and how companies can gain competitive advantages through digital transformation.</span>
+                </p>
+                <div class="hero-meta">
+                    <div class="hero-meta-item">
+                        <i class="fas fa-book-open"></i>
+                        <span>15 Chapters</span>
+                    </div>
+                    <div class="hero-meta-item">
+                        <i class="fas fa-file-alt"></i>
+                        <span>420 Pages</span>
+                    </div>
+                    <div class="hero-meta-item">
+                        <i class="fas fa-calendar"></i>
+                        <span>2024.03</span>
+                    </div>
+                </div>
+                <div class="hero-actions">
+                    <a href="#chatbot-section" class="btn btn-chatbot">
+                        <i class="fas fa-robot"></i>
+                        <span data-lang="ko">책에게 물어보기</span>
+                        <span data-lang="en">Ask the Book</span>
+                    </a>
+                    <a href="#chapters" class="btn btn-secondary">
+                        <i class="fas fa-list"></i>
+                        <span data-lang="ko">목차 보기</span>
+                        <span data-lang="en">View Chapters</span>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-book" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                <div class="book-wrapper">
+                    <div class="book-cover">
+                        <div class="book-spine"></div>
+                        <div class="book-inner">
+                            <div>
+                                <div class="book-ai-icon">
+                                    <i class="fas fa-brain"></i>
+                                </div>
+                                <div class="book-title-text">
+                                    <span data-lang="ko">AI와<br>디지털비즈니스</span>
+                                    <span data-lang="en">AI &<br>Digital Business</span>
+                                </div>
+                                <p class="book-subtitle-text">
+                                    <span data-lang="ko">인공지능 시대의 비즈니스 전략과 디지털 혁신</span>
+                                    <span data-lang="en">Business Strategy & Digital Innovation in the Age of AI</span>
+                                </p>
+                            </div>
+                            <div class="book-bottom">
+                                <p class="book-author-text">
+                                    <span data-lang="ko">김지능 · 박디지털</span>
+                                    <span data-lang="en">J. Kim · D. Park</span>
+                                </p>
+                                <p class="book-publisher-text">
+                                    <span data-lang="ko">디지털프레스 출판</span>
+                                    <span data-lang="en">Digital Press Publishing</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="book-floating-elements">
+                        <div class="floating-dot"></div>
+                        <div class="floating-dot"></div>
+                        <div class="floating-dot"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Summary Quote -->
+    <section class="summary" data-aos="fade-up">
+        <div class="summary-container">
+            <blockquote class="summary-quote">
+                <span data-lang="ko">AI는 단순한 기술이 아니라, 비즈니스의 본질을 재정의하는 힘이다. 디지털 전환의 핵심은 기술 도입이 아닌, 가치 창출 방식의 근본적 변화에 있다.</span>
+                <span data-lang="en">AI is not merely a technology—it is a force that redefines the essence of business. The core of digital transformation lies not in technology adoption, but in the fundamental change of value creation.</span>
+            </blockquote>
+            <p class="summary-author-line">
+                <span data-lang="ko">— 본문 중에서</span>
+                <span data-lang="en">— From the text</span>
+            </p>
+        </div>
+    </section>
+
+    <!-- Chapters Section -->
+    <section class="chapters" id="chapters">
+        <div class="chapters-container">
+            <div class="section-header" data-aos="fade-up">
+                <p class="section-label">TABLE OF CONTENTS</p>
+                <h2 class="section-title">
+                    <span data-lang="ko">목차</span>
+                    <span data-lang="en">Chapters</span>
+                </h2>
+                <p class="section-desc">
+                    <span data-lang="ko">총 5부 15개 챕터로 구성된 체계적 학습 로드맵</span>
+                    <span data-lang="en">A systematic learning roadmap with 5 parts and 15 chapters</span>
+                </p>
+            </div>
+
+            <div class="chapters-grid">
+                <!-- Part 1 - Korean -->
+                <div class="part-divider" data-aos="fade-up" data-lang="ko">
+                    <div class="part-divider-title">제1부 — AI의 기초와 발전</div>
+                </div>
+                <div class="chapter-item" data-aos="fade-up" data-lang="ko">
+                    <span class="chapter-number">01</span>
+                    <div class="chapter-info">
+                        <span class="chapter-title">인공지능의 역사와 현재</span>
+                        <span class="chapter-desc">튜링 테스트부터 생성형 AI까지, AI 발전의 핵심 이정표</span>
+                    </div>
+                    <span class="chapter-part">제1부</span>
+                </div>
+                <div class="chapter-item" data-aos="fade-up" data-lang="ko">
+                    <span class="chapter-number">02</span>
+                    <div class="chapter-info">
+                        <span class="chapter-title">머신러닝과 딥러닝의 이해</span>
+                        <span class="chapter-desc">비즈니스 관점에서 바라본 핵심 AI 기술 원리</span>
+                    </div>
+                    <span class="chapter-part">제1부</span>
+                </div>
+                <div class="chapter-item" data-aos="fade-up" data-lang="ko">
+                    <span class="chapter-number">03</span>
+                    <div class="chapter-info">
+                        <span class="chapter-title">대규모 언어 모델(LLM)의 등장</span>
+                        <span class="chapter-desc">GPT, Claude 등 생성형 AI가 비즈니스에 미치는 영향</span>
+                    </div>
+                    <span class="chapter-part">제1부</span>
+                </div>
+
+                <!-- Part 2 - Korean -->
+                <div class="part-divider" data-aos="fade-up" data-lang="ko">
+                    <div class="part-divider-title">제2부 — 디지털 비즈니스 전략</div>
+                </div>
+                <div class="chapter-item" data-aos="fade-up" data-lang="ko">
+                    <span class="chapter-number">04</span>
+                    <div class="chapter-info">
+                        <span class="chapter-title">디지털 전환의 프레임워크</span>
+                        <span class="chapter-desc">성공적 DX를 위한 전략적 접근 방법론</span>
+                    </div>
+                    <span class="chapter-part">제2부</span>
+                </div>
+                <div class="chapter-item" data-aos="fade-up" data-lang="ko">
+                    <span class="chapter-number">05</span>
+                    <div class="chapter-info">
+                        <span class="chapter-title">플랫폼 비즈니스와 네트워크 효과</span>
+                        <span class="chapter-desc">양면시장 이론과 플랫폼 경제의 역학</span>
+                    </div>
+                    <span class="chapter-part">제2부</span>
+                </div>
+                <div class="chapter-item" data-aos="fade-up" data-lang="ko">
+                    <span class="chapter-number">06</span>
+                    <div class="chapter-info">
+                        <span class="chapter-title">데이터 기반 의사결정</span>
+                        <span class="chapter-desc">데이터 리터러시와 분석적 사고의 비즈니스 적용</span>
+                    </div>
+                    <span class="chapter-part">제2부</span>
+                </div>
+
+                <!-- Part 3 - Korean -->
+                <div class="part-divider" data-aos="fade-up" data-lang="ko">
+                    <div class="part-divider-title">제3부 — 산업별 AI 적용</div>
+                </div>
+                <div class="chapter-item" data-aos="fade-up" data-lang="ko">
+                    <span class="chapter-number">07</span>
+                    <div class="chapter-info">
+                        <span class="chapter-title">금융 산업의 AI 혁신</span>
+                        <span class="chapter-desc">로보어드바이저, 사기탐지, AI 언더라이팅</span>
+                    </div>
+                    <span class="chapter-part">제3부</span>
+                </div>
+                <div class="chapter-item" data-aos="fade-up" data-lang="ko">
+                    <span class="chapter-number">08</span>
+                    <div class="chapter-info">
+                        <span class="chapter-title">유통·커머스의 디지털 전환</span>
+                        <span class="chapter-desc">개인화 추천, 수요예측, 스마트 물류</span>
+                    </div>
+                    <span class="chapter-part">제3부</span>
+                </div>
+                <div class="chapter-item" data-aos="fade-up" data-lang="ko">
+                    <span class="chapter-number">09</span>
+                    <div class="chapter-info">
+                        <span class="chapter-title">제조업의 스마트 팩토리</span>
+                        <span class="chapter-desc">예측 정비, 품질관리, 공급망 최적화</span>
+                    </div>
+                    <span class="chapter-part">제3부</span>
+                </div>
+                <div class="chapter-item" data-aos="fade-up" data-lang="ko">
+                    <span class="chapter-number">10</span>
+                    <div class="chapter-info">
+                        <span class="chapter-title">헬스케어와 바이오 AI</span>
+                        <span class="chapter-desc">진단 AI, 신약개발, 디지털 치료제</span>
+                    </div>
+                    <span class="chapter-part">제3부</span>
+                </div>
+
+                <!-- Part 4 - Korean -->
+                <div class="part-divider" data-aos="fade-up" data-lang="ko">
+                    <div class="part-divider-title">제4부 — 조직과 인재</div>
+                </div>
+                <div class="chapter-item" data-aos="fade-up" data-lang="ko">
+                    <span class="chapter-number">11</span>
+                    <div class="chapter-info">
+                        <span class="chapter-title">AI 시대의 조직 혁신</span>
+                        <span class="chapter-desc">애자일 조직, 데이터 문화, AI CoE 구축</span>
+                    </div>
+                    <span class="chapter-part">제4부</span>
+                </div>
+                <div class="chapter-item" data-aos="fade-up" data-lang="ko">
+                    <span class="chapter-number">12</span>
+                    <div class="chapter-info">
+                        <span class="chapter-title">디지털 인재 전략</span>
+                        <span class="chapter-desc">AI 리터러시 교육과 미래 역량 개발</span>
+                    </div>
+                    <span class="chapter-part">제4부</span>
+                </div>
+                <div class="chapter-item" data-aos="fade-up" data-lang="ko">
+                    <span class="chapter-number">13</span>
+                    <div class="chapter-info">
+                        <span class="chapter-title">인간-AI 협업 모델</span>
+                        <span class="chapter-desc">업무 자동화와 증강 지능의 균형</span>
+                    </div>
+                    <span class="chapter-part">제4부</span>
+                </div>
+
+                <!-- Part 5 - Korean -->
+                <div class="part-divider" data-aos="fade-up" data-lang="ko">
+                    <div class="part-divider-title">제5부 — 윤리와 미래</div>
+                </div>
+                <div class="chapter-item" data-aos="fade-up" data-lang="ko">
+                    <span class="chapter-number">14</span>
+                    <div class="chapter-info">
+                        <span class="chapter-title">AI 윤리와 거버넌스</span>
+                        <span class="chapter-desc">편향, 투명성, 책임 있는 AI 개발 원칙</span>
+                    </div>
+                    <span class="chapter-part">제5부</span>
+                </div>
+                <div class="chapter-item" data-aos="fade-up" data-lang="ko">
+                    <span class="chapter-number">15</span>
+                    <div class="chapter-info">
+                        <span class="chapter-title">AI 비즈니스의 미래 전망</span>
+                        <span class="chapter-desc">AGI, 양자컴퓨팅, 그리고 차세대 디지털 혁신</span>
+                    </div>
+                    <span class="chapter-part">제5부</span>
+                </div>
+
+                <!-- Part 1 - English -->
+                <div class="part-divider" data-aos="fade-up" data-lang="en">
+                    <div class="part-divider-title">Part I — Foundations of AI</div>
+                </div>
+                <div class="chapter-item" data-aos="fade-up" data-lang="en">
+                    <span class="chapter-number">01</span>
+                    <div class="chapter-info">
+                        <span class="chapter-title">History and Present of Artificial Intelligence</span>
+                        <span class="chapter-desc">Key milestones from the Turing Test to Generative AI</span>
+                    </div>
+                    <span class="chapter-part">Part I</span>
+                </div>
+                <div class="chapter-item" data-aos="fade-up" data-lang="en">
+                    <span class="chapter-number">02</span>
+                    <div class="chapter-info">
+                        <span class="chapter-title">Understanding Machine Learning & Deep Learning</span>
+                        <span class="chapter-desc">Core AI technology principles from a business perspective</span>
+                    </div>
+                    <span class="chapter-part">Part I</span>
+                </div>
+                <div class="chapter-item" data-aos="fade-up" data-lang="en">
+                    <span class="chapter-number">03</span>
+                    <div class="chapter-info">
+                        <span class="chapter-title">The Rise of Large Language Models (LLMs)</span>
+                        <span class="chapter-desc">Impact of GPT, Claude, and generative AI on business</span>
+                    </div>
+                    <span class="chapter-part">Part I</span>
+                </div>
+
+                <!-- Part 2 - English -->
+                <div class="part-divider" data-aos="fade-up" data-lang="en">
+                    <div class="part-divider-title">Part II — Digital Business Strategy</div>
+                </div>
+                <div class="chapter-item" data-aos="fade-up" data-lang="en">
+                    <span class="chapter-number">04</span>
+                    <div class="chapter-info">
+                        <span class="chapter-title">Digital Transformation Framework</span>
+                        <span class="chapter-desc">Strategic approaches for successful DX implementation</span>
+                    </div>
+                    <span class="chapter-part">Part II</span>
+                </div>
+                <div class="chapter-item" data-aos="fade-up" data-lang="en">
+                    <span class="chapter-number">05</span>
+                    <div class="chapter-info">
+                        <span class="chapter-title">Platform Business & Network Effects</span>
+                        <span class="chapter-desc">Two-sided market theory and platform economy dynamics</span>
+                    </div>
+                    <span class="chapter-part">Part II</span>
+                </div>
+                <div class="chapter-item" data-aos="fade-up" data-lang="en">
+                    <span class="chapter-number">06</span>
+                    <div class="chapter-info">
+                        <span class="chapter-title">Data-Driven Decision Making</span>
+                        <span class="chapter-desc">Data literacy and analytical thinking in business</span>
+                    </div>
+                    <span class="chapter-part">Part II</span>
+                </div>
+
+                <!-- Part 3 - English -->
+                <div class="part-divider" data-aos="fade-up" data-lang="en">
+                    <div class="part-divider-title">Part III — Industry Applications of AI</div>
+                </div>
+                <div class="chapter-item" data-aos="fade-up" data-lang="en">
+                    <span class="chapter-number">07</span>
+                    <div class="chapter-info">
+                        <span class="chapter-title">AI Innovation in Finance</span>
+                        <span class="chapter-desc">Robo-advisors, fraud detection, AI underwriting</span>
+                    </div>
+                    <span class="chapter-part">Part III</span>
+                </div>
+                <div class="chapter-item" data-aos="fade-up" data-lang="en">
+                    <span class="chapter-number">08</span>
+                    <div class="chapter-info">
+                        <span class="chapter-title">Digital Transformation in Retail & Commerce</span>
+                        <span class="chapter-desc">Personalization, demand forecasting, smart logistics</span>
+                    </div>
+                    <span class="chapter-part">Part III</span>
+                </div>
+                <div class="chapter-item" data-aos="fade-up" data-lang="en">
+                    <span class="chapter-number">09</span>
+                    <div class="chapter-info">
+                        <span class="chapter-title">Smart Factory in Manufacturing</span>
+                        <span class="chapter-desc">Predictive maintenance, quality control, supply chain optimization</span>
+                    </div>
+                    <span class="chapter-part">Part III</span>
+                </div>
+                <div class="chapter-item" data-aos="fade-up" data-lang="en">
+                    <span class="chapter-number">10</span>
+                    <div class="chapter-info">
+                        <span class="chapter-title">Healthcare & Bio AI</span>
+                        <span class="chapter-desc">Diagnostic AI, drug discovery, digital therapeutics</span>
+                    </div>
+                    <span class="chapter-part">Part III</span>
+                </div>
+
+                <!-- Part 4 - English -->
+                <div class="part-divider" data-aos="fade-up" data-lang="en">
+                    <div class="part-divider-title">Part IV — Organization & Talent</div>
+                </div>
+                <div class="chapter-item" data-aos="fade-up" data-lang="en">
+                    <span class="chapter-number">11</span>
+                    <div class="chapter-info">
+                        <span class="chapter-title">Organizational Innovation in the AI Era</span>
+                        <span class="chapter-desc">Agile organization, data culture, building AI CoE</span>
+                    </div>
+                    <span class="chapter-part">Part IV</span>
+                </div>
+                <div class="chapter-item" data-aos="fade-up" data-lang="en">
+                    <span class="chapter-number">12</span>
+                    <div class="chapter-info">
+                        <span class="chapter-title">Digital Talent Strategy</span>
+                        <span class="chapter-desc">AI literacy education and future competency development</span>
+                    </div>
+                    <span class="chapter-part">Part IV</span>
+                </div>
+                <div class="chapter-item" data-aos="fade-up" data-lang="en">
+                    <span class="chapter-number">13</span>
+                    <div class="chapter-info">
+                        <span class="chapter-title">Human-AI Collaboration Models</span>
+                        <span class="chapter-desc">Balancing work automation and augmented intelligence</span>
+                    </div>
+                    <span class="chapter-part">Part IV</span>
+                </div>
+
+                <!-- Part 5 - English -->
+                <div class="part-divider" data-aos="fade-up" data-lang="en">
+                    <div class="part-divider-title">Part V — Ethics & Future</div>
+                </div>
+                <div class="chapter-item" data-aos="fade-up" data-lang="en">
+                    <span class="chapter-number">14</span>
+                    <div class="chapter-info">
+                        <span class="chapter-title">AI Ethics and Governance</span>
+                        <span class="chapter-desc">Bias, transparency, and responsible AI development principles</span>
+                    </div>
+                    <span class="chapter-part">Part V</span>
+                </div>
+                <div class="chapter-item" data-aos="fade-up" data-lang="en">
+                    <span class="chapter-number">15</span>
+                    <div class="chapter-info">
+                        <span class="chapter-title">Future Outlook for AI Business</span>
+                        <span class="chapter-desc">AGI, quantum computing, and next-gen digital innovation</span>
+                    </div>
+                    <span class="chapter-part">Part V</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chatbot CTA Section -->
+    <section class="chatbot-section" id="chatbot-section">
+        <div class="chatbot-container" data-aos="fade-up">
+            <div class="chatbot-icon">
+                <i class="fas fa-robot"></i>
+            </div>
+            <h2 class="chatbot-title">
+                <span data-lang="ko">책에게 물어보기</span>
+                <span data-lang="en">Ask the Book</span>
+            </h2>
+            <p class="chatbot-desc">
+                <span data-lang="ko">AI 챗봇이 이 책의 내용을 기반으로 여러분의 질문에 답변합니다.<br>챕터별 핵심 내용, 개념 설명, 실무 적용 방법까지 물어보세요.</span>
+                <span data-lang="en">Our AI chatbot answers your questions based on the book's content.<br>Ask about key concepts, chapter summaries, and practical applications.</span>
+            </p>
+            <div class="chatbot-features">
+                <div class="chatbot-feature">
+                    <i class="fas fa-check-circle"></i>
+                    <span data-lang="ko">핵심 개념 설명</span>
+                    <span data-lang="en">Key Concept Explanations</span>
+                </div>
+                <div class="chatbot-feature">
+                    <i class="fas fa-check-circle"></i>
+                    <span data-lang="ko">챕터별 요약</span>
+                    <span data-lang="en">Chapter Summaries</span>
+                </div>
+                <div class="chatbot-feature">
+                    <i class="fas fa-check-circle"></i>
+                    <span data-lang="ko">실무 적용 가이드</span>
+                    <span data-lang="en">Practical Application Guide</span>
+                </div>
+            </div>
+            <button class="chatbot-btn" id="openChatbot">
+                <i class="fas fa-comments"></i>
+                <span data-lang="ko">지금 대화 시작하기</span>
+                <span data-lang="en">Start Conversation Now</span>
+            </button>
+            <p class="chatbot-note">
+                <span data-lang="ko">* 본 챗봇은 책의 내용을 기반으로 응답하며, 일반적인 AI 지식과 결합하여 답변합니다.</span>
+                <span data-lang="en">* This chatbot responds based on the book's content, combined with general AI knowledge.</span>
+            </p>
+        </div>
+    </section>
+
+    <!-- Author Section -->
+    <section class="author-section" data-aos="fade-up">
+        <div class="author-container">
+            <div class="author-avatar">
+                <i class="fas fa-user-tie"></i>
+            </div>
+            <div class="author-info">
+                <h3>
+                    <span data-lang="ko">김지능 · 박디지털</span>
+                    <span data-lang="en">Jineng Kim · Digital Park</span>
+                </h3>
+                <p class="author-title">
+                    <span data-lang="ko">공저자 | AI 전략 컨설턴트 & 디지털 비즈니스 연구자</span>
+                    <span data-lang="en">Co-authors | AI Strategy Consultant & Digital Business Researcher</span>
+                </p>
+                <p>
+                    <span data-lang="ko">김지능 교수는 서울대학교 경영학과에서 AI 비즈니스 전략을 연구하고 있으며, 박디지털 박사는 글로벌 컨설팅 펌에서 10년 이상 디지털 전환 프로젝트를 이끌어온 실무 전문가입니다. 두 저자는 이론과 실무의 균형 잡힌 시각으로 이 책을 집필했습니다.</span>
+                    <span data-lang="en">Professor Kim researches AI business strategy at Seoul National University, while Dr. Park is a practitioner with over 10 years of experience leading digital transformation projects at a global consulting firm. The two authors wrote this book with a balanced perspective of theory and practice.</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <h3>
+                        <span data-lang="ko">AI와 디지털비즈니스</span>
+                        <span data-lang="en">AI & Digital Business</span>
+                    </h3>
+                    <p>
+                        <span data-lang="ko">인공지능 기술과 디지털 비즈니스 전략의 체계적 이해를 위한 학술서적. 경영학, 정보시스템, AI 전공 학부 및 대학원 교재로 활용 가능합니다.</span>
+                        <span data-lang="en">An academic text for systematic understanding of AI technology and digital business strategy. Suitable as a textbook for undergraduate and graduate courses in business, information systems, and AI.</span>
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>
+                        <span data-lang="ko">출판 정보</span>
+                        <span data-lang="en">Publication</span>
+                    </h4>
+                    <ul>
+                        <li><a href="#">
+                            <span data-lang="ko">출판사: 디지털프레스</span>
+                            <span data-lang="en">Publisher: Digital Press</span>
+                        </a></li>
+                        <li><a href="#">
+                            <span data-lang="ko">초판 발행: 2024년 3월</span>
+                            <span data-lang="en">First Edition: March 2024</span>
+                        </a></li>
+                        <li><a href="#">ISBN: 979-11-XXXX-XXX-X</a></li>
+                        <li><a href="#">
+                            <span data-lang="ko">페이지: 420p</span>
+                            <span data-lang="en">Pages: 420p</span>
+                        </a></li>
+                        <li><a href="#">
+                            <span data-lang="ko">정가: 32,000원</span>
+                            <span data-lang="en">Price: ₩32,000</span>
+                        </a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>
+                        <span data-lang="ko">바로가기</span>
+                        <span data-lang="en">Links</span>
+                    </h4>
+                    <ul>
+                        <li><a href="#">
+                            <span data-lang="ko">교보문고</span>
+                            <span data-lang="en">Kyobo Books</span>
+                        </a></li>
+                        <li><a href="#">
+                            <span data-lang="ko">YES24</span>
+                            <span data-lang="en">YES24</span>
+                        </a></li>
+                        <li><a href="#">
+                            <span data-lang="ko">알라딘</span>
+                            <span data-lang="en">Aladin</span>
+                        </a></li>
+                        <li><a href="#">
+                            <span data-lang="ko">출판사 홈페이지</span>
+                            <span data-lang="en">Publisher Website</span>
+                        </a></li>
+                        <li><a href="#">
+                            <span data-lang="ko">정오표</span>
+                            <span data-lang="en">Errata</span>
+                        </a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span class="footer-copyright">
+                    <span data-lang="ko">© 2024 김지능, 박디지털. All rights reserved.</span>
+                    <span data-lang="en">© 2024 J. Kim, D. Park. All rights reserved.</span>
+                </span>
+                <div class="footer-publisher">
+                    <div class="footer-publisher-logo">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div>
+                        <div style="color: var(--beige-400); font-weight: 500;">
+                            <span data-lang="ko">디지털프레스</span>
+                            <span data-lang="en">Digital Press</span>
+                        </div>
+                        <div style="font-size: 0.7rem; color: var(--navy-500);">
+                            <span data-lang="ko">서울시 강남구 테헤란로 123</span>
+                            <span data-lang="en">123 Teheran-ro, Gangnam, Seoul</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Chatbot Button -->
+    <button class="floating-chatbot" id="floatingChatbot">
+        <i class="fas fa-robot"></i>
+        <span class="tooltip">
+            <span data-lang="ko">책에게 물어보기</span>
+            <span data-lang="en">Ask the Book</span>
+        </span>
+    </button>
+
+    <!-- Chatbot Modal -->
+    <div class="chatbot-modal" id="chatbotModal">
+        <div class="chatbot-modal-content">
+            <div class="chatbot-modal-header">
+                <h3>
+                    <i class="fas fa-robot"></i>
+                    <span data-lang="ko">책에게 물어보기</span>
+                    <span data-lang="en">Ask the Book</span>
+                </h3>
+                <button class="chatbot-close" id="closeChatbot">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="chatbot-messages" id="chatMessages">
+                <div class="chat-message bot">
+                    <div class="chat-avatar"><i class="fas fa-robot"></i></div>
+                    <div class="chat-bubble">
+                        <span data-lang="ko">안녕하세요! 👋 저는 《AI와 디지털비즈니스》 책의 AI 도우미입니다. 책의 내용에 대해 궁금한 점을 물어보세요!</span>
+                        <span data-lang="en">Hello! 👋 I'm the AI assistant for "AI & Digital Business." Ask me anything about the book's content!</span>
+                    </div>
+                </div>
+                <div class="chat-message bot">
+                    <div class="chat-avatar"><i class="fas fa-robot"></i></div>
+                    <div class="chat-bubble">
+                        <span data-lang="ko">예를 들어:<br>• "3장 LLM 내용을 요약해줘"<br>• "디지털 전환 프레임워크란?"<br>• "AI 윤리의 핵심 원칙은?"</span>
+                        <span data-lang="en">For example:<br>• "Summarize Chapter 3 on LLMs"<br>• "What is the DX framework?"<br>• "Key principles of AI ethics?"</span>
+                    </div>
+                </div>
+            </div>
+            <div class="chatbot-input-area">
+                <input type="text" id="chatInput" autocomplete="off">
+                <button id="chatSend"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 700,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 80
+        });
+
+        // Language Toggle
+        let currentLang = 'ko';
+        const langBtns = document.querySelectorAll('.lang-btn');
+
+        const placeholders = {
+            ko: '질문을 입력하세요...',
+            en: 'Type your question...'
+        };
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            if (lang === 'en') {
+                document.body.classList.add('en');
+                document.documentElement.lang = 'en';
+            } else {
+                document.body.classList.remove('en');
+                document.documentElement.lang = 'ko';
+            }
+            langBtns.forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.language === lang);
+            });
+            document.getElementById('chatInput').placeholder = placeholders[lang];
+            localStorage.setItem('book-lang', lang);
+        }
+
+        langBtns.forEach(btn => {
+            btn.addEventListener('click', () => setLanguage(btn.dataset.language));
+        });
+
+        const savedLang = localStorage.getItem('book-lang');
+        setLanguage(savedLang || 'ko');
+
+        // Header scroll
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Mobile menu
+        const mobileToggle = document.getElementById('mobileToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileClose = document.getElementById('mobileClose');
+
+        mobileToggle.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        mobileClose.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Chatbot Modal
+        const chatbotModal = document.getElementById('chatbotModal');
+        const openChatbot = document.getElementById('openChatbot');
+        const floatingChatbot = document.getElementById('floatingChatbot');
+        const closeChatbot = document.getElementById('closeChatbot');
+
+        function openModal() {
+            chatbotModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            document.getElementById('chatInput').focus();
+        }
+
+        function closeModal() {
+            chatbotModal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        openChatbot.addEventListener('click', openModal);
+        floatingChatbot.addEventListener('click', openModal);
+        closeChatbot.addEventListener('click', closeModal);
+
+        chatbotModal.addEventListener('click', (e) => {
+            if (e.target === chatbotModal) closeModal();
+        });
+
+        // Chat functionality
+        const chatInput = document.getElementById('chatInput');
+        const chatSend = document.getElementById('chatSend');
+        const chatMessages = document.getElementById('chatMessages');
+
+        const bookResponses = {
+            ko: [
+                "좋은 질문입니다! 이 책에서는 AI를 '비즈니스 가치 창출의 핵심 도구'로 정의합니다. 특히 3장에서 LLM의 등장이 어떻게 기존 비즈니스 모델을 파괴적으로 혁신하는지 상세히 다룹니다.",
+                "책의 4장 '디지털 전환 프레임워크'에 따르면, 성공적인 DX는 ①전략 수립 ②조직 문화 변화 ③기술 도입 ④성과 측정의 4단계로 이루어집니다.",
+                "14장에서 다루는 AI 윤리의 핵심 원칙은 투명성(Transparency), 공정성(Fairness), 책임성(Accountability), 프라이버시 보호입니다. 저자는 '기술 발전 속도보다 윤리적 가이드라인이 앞서야 한다'고 강조합니다.",
+                "5장에 따르면, 플랫폼 비즈니스의 핵심은 '네트워크 효과'입니다. 사용자가 늘수록 플랫폼의 가치가 기하급수적으로 증가하는 현상을 양면시장 이론으로 설명합니다.",
+                "이 질문은 11장 'AI 시대의 조직 혁신'과 관련이 있습니다. 저자는 데이터 기반 문화가 AI 도입의 성패를 좌우한다고 강조하며, AI CoE(Center of Excellence) 구축을 권장합니다."
+            ],
+            en: [
+                "Great question! This book defines AI as 'a core tool for business value creation.' Chapter 3 details how the emergence of LLMs disruptively innovates existing business models.",
+                "According to Chapter 4's 'Digital Transformation Framework,' successful DX consists of 4 stages: ①Strategy formulation ②Organizational culture change ③Technology adoption ④Performance measurement.",
+                "The core principles of AI ethics covered in Chapter 14 are Transparency, Fairness, Accountability, and Privacy Protection. The authors emphasize that 'ethical guidelines must precede the pace of technological advancement.'",
+                "According to Chapter 5, the key to platform business is 'network effects.' It explains through two-sided market theory how platform value increases exponentially as users grow.",
+                "This question relates to Chapter 11 'Organizational Innovation in the AI Era.' The authors emphasize that data-driven culture determines the success of AI adoption and recommend building an AI CoE (Center of Excellence)."
+            ]
+        };
+
+        function addMessage(text, isUser) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `chat-message ${isUser ? 'user' : 'bot'}`;
+            
+            const avatarIcon = isUser ? 'fa-user' : 'fa-robot';
+            messageDiv.innerHTML = `
+                <div class="chat-avatar"><i class="fas ${avatarIcon}"></i></div>
+                <div class="chat-bubble">${text}</div>
+            `;
+            
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function sendMessage() {
+            const text = chatInput.value.trim();
+            if (!text) return;
+
+            addMessage(text, true);
+            chatInput.value = '';
+
+            // Simulate typing
+            setTimeout(() => {
+                const responses = bookResponses[currentLang];
+                const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+                addMessage(randomResponse, false);
+            }, 800 + Math.random() * 700);
+        }
+
+        chatSend.addEventListener('click', sendMessage);
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendMessage();
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 80;
+                    const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({ top, behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Escape key closes modal
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && chatbotModal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
+```
